@@ -49,24 +49,13 @@ f.close(); // fermeture du fichier
 }
 
 
-vector<int> RGB(double hauteur,double max, double min){
-	//Renvoie les valeurs RGB correspondant à une hauteur h
-	double val = (hauteur - min)/max;
-	//cout << val << endl;
-	vector<int> color;
-	color.push_back(val*255);
-	color.push_back(0);
-	color.push_back(255-val*255);
-
-	return color;
-}
 
 void GPS_to_XY(float lx, float ly,float &x, float &y){
 	// Mercator projection
 	std::array<double,2> pos{wgs84::toCartesian({48.394031,-4.957625},{lx,ly})};
 	x = pos[0]; // Récupère la coordonnée en x
 	y = pos[1]; // Récupère la coordonnée en y
-	//cout << x << ' ' << y << endl;
+	
 	
 }
 
@@ -87,8 +76,7 @@ else{
 
 	string ligne; //Une variable pour stocker les lignes lues
 
-	//for(int k = 0 ; k< 1000 ; k ++ ){
-	//	getline(f,ligne);
+	
 	while(getline(f, ligne)){
 
 		const char *seps = " "; // on sépare en fonction de tout les espaces
@@ -115,11 +103,6 @@ else{
 	}
 	
 
-	//cout << "la valeur min en x est " << *std::min_element(liste_x.begin(), liste_x.end()) << endl;
-	//cout << "la valeur max en x est " << *std::max_element(liste_x.begin(), liste_x.end()) << endl;
-	//cout << "la valeur min en y est " << *std::min_element(liste_y.begin(), liste_y.end()) << endl;
-	//cout << "la valeur max en y est " << *std::max_element(liste_y.begin(), liste_y.end()) << endl;
-	
 	extreMome.push_back(*std::min_element(liste_x.begin(), liste_x.end()));
 	extreMome.push_back(*std::max_element(liste_x.begin(), liste_x.end()));
 	extreMome.push_back(*std::min_element(liste_y.begin(), liste_y.end()));
@@ -232,6 +215,8 @@ void segmentation_triangle(delaunator::Delaunator d, vector<double> extreMome, i
 		zy2 = num_zone2.second;
 		zy3 = num_zone3.second;
 		
+
+		//Delaunator crée une enveloppe convexe, on recherche donc les faux triangles
 		double carte_x_max,carte_x_min,carte_y_min,carte_y_max,pas_x,pas_y;
 		carte_x_max = extreMome[1];
 		carte_x_min = extreMome[0];
@@ -250,17 +235,14 @@ void segmentation_triangle(delaunator::Delaunator d, vector<double> extreMome, i
 
 		for(int i = xmin; i <= xmax ; i ++){
 			for(int j = ymin; j <= ymax;j++){
+				//si le triangle est trop grand c'est que c'est un faux
 				if ((abs(x0-x1)<pas_x) and (abs(x0-x2)<pas_x) and (abs(x2-x1)<pas_x) and (abs(y0-y1)<pas_y) and (abs(y2-y1)<pas_y) and (abs(y0-y2)<pas_y) ){
-					triangle_sorted[pair<int,int>(i,j)].push_back(triag);	
+					triangle_sorted[pair<int,int>(i,j)].push_back(triag); // on ajoute les triangles trouvées et la liste des bornes
 				}
 				
 			}
 		}
 
-
-		/*triangle_sorted[num_zone1].push_back(triag);
-		triangle_sorted[num_zone2].push_back(triag);
-		triangle_sorted[num_zone3].push_back(triag); // on ajoute les triangles trouvées et la liste des bornes*/
 		
 			}	
 
@@ -281,12 +263,10 @@ int main(int argc,char *argv[]){
 		cout << "Error, Arguments manquants (nom fichier, taille)"<< endl;
 	}
 	
+
+	//ColourManager gere les couleurs de la carte
 	ColourManager::Init_ColourManager();
 
-
-	 
-
-	
 	string file_name = "carte.pgm";
 	map <pair<double,double>,float> mape; // dico des points 
 	vector<double> coords; // liste des points
@@ -305,18 +285,16 @@ int main(int argc,char *argv[]){
     double resx = res;
     double resy = res;
 
-    vector<vector<vector<int>>> *im = new vector<vector<vector<int>>> (resx, vector<vector<int>> (resy,vector<int> (3,255)));
+    vector<vector<vector<int>>> *im = new vector<vector<vector<int>>> (resx, vector<vector<int>> (resy,vector<int> (3,255))); // vector contenant pour chaque case les valeurs RGB
 
     double xmin,xmax,ymin,ymax,zmin,zmax ; 
     xmin = extreMome[0];
     xmax = extreMome[1];
     ymin = extreMome[2];
     ymax = extreMome[3];
-//cout << values.size() << endl;
     zmin = values[0];
     zmax = values[1];
 
-    //cout << zmin << ' ' << zmax << endl;
 
     double pasx = (xmax - xmin) / resx ;
     double pasy = (ymax - ymin) / resy;
@@ -327,6 +305,8 @@ int main(int argc,char *argv[]){
     double pixel_x;
     double pixel_y;
 	double moy = 0;
+
+	//On gere les couleurs 
 
 	ColourManager manager(zmin,zmax);
 	ColourMap cmap("cmap");
@@ -364,12 +344,6 @@ int main(int argc,char *argv[]){
     		num_zone = find_zone(pixel_x, pixel_y , extreMome, grid);
     		triangle_de_la_zone = triangle_sorted[num_zone];
     		
-			
-			
-			
-			
-			
-    		
     		for(std::size_t k = 0; k < triangle_de_la_zone.size(); k++) {
 			
     			if (in_triangle(pixel_x , pixel_y, triangle_de_la_zone[k])){
@@ -382,10 +356,7 @@ int main(int argc,char *argv[]){
 
 					moy = (h0+h1+h2)/3;
 					
-					
-				
 					c = manager.getInterpolatedColour((float)moy);
-
 
     				(*im)[i][j][0] = (c.getIntR());
 					(*im)[i][j][1] = (c.getIntG());
@@ -399,7 +370,7 @@ int main(int argc,char *argv[]){
     	}
     	
     }
-	
+	 //on ecrit dans le fichier carte.pgm
      for(int i = 0; i < resx ;i ++ ){
     	
     	for(int j = 0 ; j<resy ; j++ ) {
@@ -410,7 +381,7 @@ int main(int argc,char *argv[]){
     		f << r  << g << b;
 
     	}
-    	//f << endl;
+    
     }
 
     f.close();

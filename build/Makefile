@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named create_raster
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
+create_raster: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 create_raster
+.PHONY : create_raster
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+create_raster/fast:
+	$(MAKE) -f CMakeFiles/create_raster.dir/build.make CMakeFiles/create_raster.dir/build
+.PHONY : create_raster/fast
 
 src/main2.o: src/main2.cpp.o
 
@@ -129,7 +129,7 @@ src/main2.o: src/main2.cpp.o
 
 # target to build an object file
 src/main2.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main2.cpp.o
+	$(MAKE) -f CMakeFiles/create_raster.dir/build.make CMakeFiles/create_raster.dir/src/main2.cpp.o
 .PHONY : src/main2.cpp.o
 
 src/main2.i: src/main2.cpp.i
@@ -138,7 +138,7 @@ src/main2.i: src/main2.cpp.i
 
 # target to preprocess a source file
 src/main2.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main2.cpp.i
+	$(MAKE) -f CMakeFiles/create_raster.dir/build.make CMakeFiles/create_raster.dir/src/main2.cpp.i
 .PHONY : src/main2.cpp.i
 
 src/main2.s: src/main2.cpp.s
@@ -147,7 +147,7 @@ src/main2.s: src/main2.cpp.s
 
 # target to generate assembly for a file
 src/main2.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main2.cpp.s
+	$(MAKE) -f CMakeFiles/create_raster.dir/build.make CMakeFiles/create_raster.dir/src/main2.cpp.s
 .PHONY : src/main2.cpp.s
 
 # Help Target
@@ -157,7 +157,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... main"
+	@echo "... create_raster"
 	@echo "... edit_cache"
 	@echo "... src/main2.o"
 	@echo "... src/main2.i"
