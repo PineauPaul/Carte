@@ -1,16 +1,11 @@
-cmake_minimum_required(VERSION 2.6)
-project(main)
+cmake_minimum_required(VERSION 2.8.3)
+project(carte)
 
 
-set(CMAKE_BUILD_TYPE debug)
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -std=c++11")
+include_directories(src)
 
-file(
-	GLOB_RECURSE
-	source_files
-	*.cpp	
-)
-	add_executable(
-	main_exe
-	${source_files}
-)
+
+add_executable(main src/main2.cpp)
+
+target_link_libraries(main)
+
