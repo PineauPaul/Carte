@@ -123,32 +123,32 @@ create_raster/fast:
 	$(MAKE) -f CMakeFiles/create_raster.dir/build.make CMakeFiles/create_raster.dir/build
 .PHONY : create_raster/fast
 
-src/main2.o: src/main2.cpp.o
+src/main.o: src/main.cpp.o
 
-.PHONY : src/main2.o
+.PHONY : src/main.o
 
 # target to build an object file
-src/main2.cpp.o:
-	$(MAKE) -f CMakeFiles/create_raster.dir/build.make CMakeFiles/create_raster.dir/src/main2.cpp.o
-.PHONY : src/main2.cpp.o
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/create_raster.dir/build.make CMakeFiles/create_raster.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-src/main2.i: src/main2.cpp.i
+src/main.i: src/main.cpp.i
 
-.PHONY : src/main2.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-src/main2.cpp.i:
-	$(MAKE) -f CMakeFiles/create_raster.dir/build.make CMakeFiles/create_raster.dir/src/main2.cpp.i
-.PHONY : src/main2.cpp.i
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/create_raster.dir/build.make CMakeFiles/create_raster.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-src/main2.s: src/main2.cpp.s
+src/main.s: src/main.cpp.s
 
-.PHONY : src/main2.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-src/main2.cpp.s:
-	$(MAKE) -f CMakeFiles/create_raster.dir/build.make CMakeFiles/create_raster.dir/src/main2.cpp.s
-.PHONY : src/main2.cpp.s
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/create_raster.dir/build.make CMakeFiles/create_raster.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... create_raster"
 	@echo "... edit_cache"
-	@echo "... src/main2.o"
-	@echo "... src/main2.i"
-	@echo "... src/main2.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

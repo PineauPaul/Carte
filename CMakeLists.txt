@@ -5,7 +5,7 @@ project(carte)
 include_directories(src)
 
 
-add_executable(create_raster src/main2.cpp)
+add_executable(create_raster src/main.cpp)
 
 target_link_libraries(create_raster)
 

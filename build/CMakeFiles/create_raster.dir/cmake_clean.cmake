@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/create_raster.dir/src/main2.cpp.o"
+  "CMakeFiles/create_raster.dir/src/main.cpp.o"
   "create_raster.pdb"
   "create_raster"
 )

@@ -57,38 +57,38 @@ include CMakeFiles/create_raster.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/create_raster.dir/flags.make
 
-CMakeFiles/create_raster.dir/src/main2.cpp.o: CMakeFiles/create_raster.dir/flags.make
-CMakeFiles/create_raster.dir/src/main2.cpp.o: ../src/main2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/paul/Documents/C++/MNT/Carte/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/create_raster.dir/src/main2.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/create_raster.dir/src/main2.cpp.o -c /home/paul/Documents/C++/MNT/Carte/src/main2.cpp
+CMakeFiles/create_raster.dir/src/main.cpp.o: CMakeFiles/create_raster.dir/flags.make
+CMakeFiles/create_raster.dir/src/main.cpp.o: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/paul/Documents/C++/MNT/Carte/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/create_raster.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/create_raster.dir/src/main.cpp.o -c /home/paul/Documents/C++/MNT/Carte/src/main.cpp
 
-CMakeFiles/create_raster.dir/src/main2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/create_raster.dir/src/main2.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/paul/Documents/C++/MNT/Carte/src/main2.cpp > CMakeFiles/create_raster.dir/src/main2.cpp.i
+CMakeFiles/create_raster.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/create_raster.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/paul/Documents/C++/MNT/Carte/src/main.cpp > CMakeFiles/create_raster.dir/src/main.cpp.i
 
-CMakeFiles/create_raster.dir/src/main2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/create_raster.dir/src/main2.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/paul/Documents/C++/MNT/Carte/src/main2.cpp -o CMakeFiles/create_raster.dir/src/main2.cpp.s
+CMakeFiles/create_raster.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/create_raster.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/paul/Documents/C++/MNT/Carte/src/main.cpp -o CMakeFiles/create_raster.dir/src/main.cpp.s
 
-CMakeFiles/create_raster.dir/src/main2.cpp.o.requires:
+CMakeFiles/create_raster.dir/src/main.cpp.o.requires:
 
-.PHONY : CMakeFiles/create_raster.dir/src/main2.cpp.o.requires
+.PHONY : CMakeFiles/create_raster.dir/src/main.cpp.o.requires
 
-CMakeFiles/create_raster.dir/src/main2.cpp.o.provides: CMakeFiles/create_raster.dir/src/main2.cpp.o.requires
-	$(MAKE) -f CMakeFiles/create_raster.dir/build.make CMakeFiles/create_raster.dir/src/main2.cpp.o.provides.build
-.PHONY : CMakeFiles/create_raster.dir/src/main2.cpp.o.provides
+CMakeFiles/create_raster.dir/src/main.cpp.o.provides: CMakeFiles/create_raster.dir/src/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/create_raster.dir/build.make CMakeFiles/create_raster.dir/src/main.cpp.o.provides.build
+.PHONY : CMakeFiles/create_raster.dir/src/main.cpp.o.provides
 
-CMakeFiles/create_raster.dir/src/main2.cpp.o.provides.build: CMakeFiles/create_raster.dir/src/main2.cpp.o
+CMakeFiles/create_raster.dir/src/main.cpp.o.provides.build: CMakeFiles/create_raster.dir/src/main.cpp.o
 
 
 # Object files for target create_raster
 create_raster_OBJECTS = \
-"CMakeFiles/create_raster.dir/src/main2.cpp.o"
+"CMakeFiles/create_raster.dir/src/main.cpp.o"
 
 # External object files for target create_raster
 create_raster_EXTERNAL_OBJECTS =
 
-create_raster: CMakeFiles/create_raster.dir/src/main2.cpp.o
+create_raster: CMakeFiles/create_raster.dir/src/main.cpp.o
 create_raster: CMakeFiles/create_raster.dir/build.make
 create_raster: CMakeFiles/create_raster.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/paul/Documents/C++/MNT/Carte/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable create_raster"
@@ -99,7 +99,7 @@ CMakeFiles/create_raster.dir/build: create_raster
 
 .PHONY : CMakeFiles/create_raster.dir/build
 
-CMakeFiles/create_raster.dir/requires: CMakeFiles/create_raster.dir/src/main2.cpp.o.requires
+CMakeFiles/create_raster.dir/requires: CMakeFiles/create_raster.dir/src/main.cpp.o.requires
 
 .PHONY : CMakeFiles/create_raster.dir/requires
 
