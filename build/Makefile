@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/paul/Documents/C++/MNT/Carte/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -123,6 +123,86 @@ create_raster/fast:
 	$(MAKE) -f CMakeFiles/create_raster.dir/build.make CMakeFiles/create_raster.dir/build
 .PHONY : create_raster/fast
 
+#=============================================================================
+# Target rules for targets named carte
+
+# Build rule for target.
+carte: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 carte
+.PHONY : carte
+
+# fast build rule for target.
+carte/fast:
+	$(MAKE) -f CMakeFiles/carte.dir/build.make CMakeFiles/carte.dir/build
+.PHONY : carte/fast
+
+#=============================================================================
+# Target rules for targets named Math
+
+# Build rule for target.
+Math: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Math
+.PHONY : Math
+
+# fast build rule for target.
+Math/fast:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/build
+.PHONY : Math/fast
+
+src/Kart.o: src/Kart.cpp.o
+
+.PHONY : src/Kart.o
+
+# target to build an object file
+src/Kart.cpp.o:
+	$(MAKE) -f CMakeFiles/carte.dir/build.make CMakeFiles/carte.dir/src/Kart.cpp.o
+.PHONY : src/Kart.cpp.o
+
+src/Kart.i: src/Kart.cpp.i
+
+.PHONY : src/Kart.i
+
+# target to preprocess a source file
+src/Kart.cpp.i:
+	$(MAKE) -f CMakeFiles/carte.dir/build.make CMakeFiles/carte.dir/src/Kart.cpp.i
+.PHONY : src/Kart.cpp.i
+
+src/Kart.s: src/Kart.cpp.s
+
+.PHONY : src/Kart.s
+
+# target to generate assembly for a file
+src/Kart.cpp.s:
+	$(MAKE) -f CMakeFiles/carte.dir/build.make CMakeFiles/carte.dir/src/Kart.cpp.s
+.PHONY : src/Kart.cpp.s
+
+src/Math.o: src/Math.cpp.o
+
+.PHONY : src/Math.o
+
+# target to build an object file
+src/Math.cpp.o:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math.cpp.o
+.PHONY : src/Math.cpp.o
+
+src/Math.i: src/Math.cpp.i
+
+.PHONY : src/Math.i
+
+# target to preprocess a source file
+src/Math.cpp.i:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math.cpp.i
+.PHONY : src/Math.cpp.i
+
+src/Math.s: src/Math.cpp.s
+
+.PHONY : src/Math.s
+
+# target to generate assembly for a file
+src/Math.cpp.s:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math.cpp.s
+.PHONY : src/Math.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -156,9 +236,17 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... create_raster"
-	@echo "... edit_cache"
+	@echo "... carte"
+	@echo "... Math"
+	@echo "... src/Kart.o"
+	@echo "... src/Kart.i"
+	@echo "... src/Kart.s"
+	@echo "... src/Math.o"
+	@echo "... src/Math.i"
+	@echo "... src/Math.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

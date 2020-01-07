@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcarte.a  CMakeFiles/carte.dir/src/Kart.cpp.o
+/usr/bin/ranlib libcarte.a

@@ -90,6 +90,8 @@ create_raster_EXTERNAL_OBJECTS =
 
 create_raster: CMakeFiles/create_raster.dir/src/main.cpp.o
 create_raster: CMakeFiles/create_raster.dir/build.make
+create_raster: libcarte.a
+create_raster: libMath.a
 create_raster: CMakeFiles/create_raster.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/paul/Documents/C++/MNT/Carte/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable create_raster"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/create_raster.dir/link.txt --verbose=$(VERBOSE)

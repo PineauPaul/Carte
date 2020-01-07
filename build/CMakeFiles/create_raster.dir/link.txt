@@ -1,1 +1,1 @@
-/usr/bin/c++    -rdynamic CMakeFiles/create_raster.dir/src/main.cpp.o  -o create_raster 
+/usr/bin/c++   -std=c++11 -g  -rdynamic CMakeFiles/create_raster.dir/src/main.cpp.o  -o create_raster libcarte.a libMath.a 

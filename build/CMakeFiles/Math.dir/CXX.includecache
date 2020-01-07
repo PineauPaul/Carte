@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/WGS84toCartesian.hpp
+cmath
+-
+array
+-
+limits
+-
+
+/home/paul/Documents/C++/MNT/Carte/src/Math.cpp
+math.h
+-
+WGS84toCartesian.hpp
+/home/paul/Documents/C++/MNT/Carte/src/WGS84toCartesian.hpp
+

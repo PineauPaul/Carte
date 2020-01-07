@@ -181,8 +181,14 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Dependencies for target
+Math_LIB_DEPENDS:STATIC=
+
 //Value Computed by CMake
 carte_BINARY_DIR:STATIC=/home/paul/Documents/C++/MNT/Carte/build
+
+//Dependencies for target
+carte_LIB_DEPENDS:STATIC=
 
 //Value Computed by CMake
 carte_SOURCE_DIR:STATIC=/home/paul/Documents/C++/MNT/Carte
