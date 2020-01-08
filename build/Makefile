@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/paul/Documents/C++/MNT/Carte/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,28 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +122,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named create_raster
+# Target rules for targets named Math
 
 # Build rule for target.
-create_raster: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 create_raster
-.PHONY : create_raster
+Math: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Math
+.PHONY : Math
 
 # fast build rule for target.
-create_raster/fast:
-	$(MAKE) -f CMakeFiles/create_raster.dir/build.make CMakeFiles/create_raster.dir/build
-.PHONY : create_raster/fast
+Math/fast:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/build
+.PHONY : Math/fast
 
 #=============================================================================
 # Target rules for targets named carte
@@ -137,17 +148,30 @@ carte/fast:
 .PHONY : carte/fast
 
 #=============================================================================
-# Target rules for targets named Math
+# Target rules for targets named test_exe
 
 # Build rule for target.
-Math: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Math
-.PHONY : Math
+test_exe: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_exe
+.PHONY : test_exe
 
 # fast build rule for target.
-Math/fast:
-	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/build
-.PHONY : Math/fast
+test_exe/fast:
+	$(MAKE) -f CMakeFiles/test_exe.dir/build.make CMakeFiles/test_exe.dir/build
+.PHONY : test_exe/fast
+
+#=============================================================================
+# Target rules for targets named create_raster
+
+# Build rule for target.
+create_raster: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 create_raster
+.PHONY : create_raster
+
+# fast build rule for target.
+create_raster/fast:
+	$(MAKE) -f CMakeFiles/create_raster.dir/build.make CMakeFiles/create_raster.dir/build
+.PHONY : create_raster/fast
 
 src/Kart.o: src/Kart.cpp.o
 
@@ -230,17 +254,46 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/create_raster.dir/build.make CMakeFiles/create_raster.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+test/test.o: test/test.cpp.o
+
+.PHONY : test/test.o
+
+# target to build an object file
+test/test.cpp.o:
+	$(MAKE) -f CMakeFiles/test_exe.dir/build.make CMakeFiles/test_exe.dir/test/test.cpp.o
+.PHONY : test/test.cpp.o
+
+test/test.i: test/test.cpp.i
+
+.PHONY : test/test.i
+
+# target to preprocess a source file
+test/test.cpp.i:
+	$(MAKE) -f CMakeFiles/test_exe.dir/build.make CMakeFiles/test_exe.dir/test/test.cpp.i
+.PHONY : test/test.cpp.i
+
+test/test.s: test/test.cpp.s
+
+.PHONY : test/test.s
+
+# target to generate assembly for a file
+test/test.cpp.s:
+	$(MAKE) -f CMakeFiles/test_exe.dir/build.make CMakeFiles/test_exe.dir/test/test.cpp.s
+.PHONY : test/test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... create_raster"
-	@echo "... carte"
 	@echo "... Math"
+	@echo "... carte"
+	@echo "... test_exe"
+	@echo "... create_raster"
+	@echo "... test"
+	@echo "... edit_cache"
 	@echo "... src/Kart.o"
 	@echo "... src/Kart.i"
 	@echo "... src/Kart.s"
@@ -250,6 +303,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... test/test.o"
+	@echo "... test/test.i"
+	@echo "... test/test.s"
 .PHONY : help
 
 

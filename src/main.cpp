@@ -95,7 +95,7 @@ int main(int argc,char *argv[]){
 	ColourManager manager(zmin,zmax);
 	ColourMap cmap("cmap");
 
-	cmap.addColour(166,206,227,1.0f);
+	/*cmap.addColour(166,206,227,1.0f);
 	cmap.addColour(31,120,180,1.0f);
 	cmap.addColour(178,223,138,1.0f);
 	cmap.addColour(51,160,44,1.0f);
@@ -106,8 +106,14 @@ int main(int argc,char *argv[]){
 	//cmap.addColour(202,178,214,1.0f);
 	cmap.addColour(106,61,154,1.0f);
 	cmap.addColour(255,255,153,1.0f);
-    cmap.addColour(177,89,40,1.0f);
+    cmap.addColour(177,89,40,1.0f);*/
 
+	cmap.addColour(142, 68, 173,1.0);   // Wisteria
+    cmap.addColour(41, 128, 185, 1.0);  // Belize Hole
+    cmap.addColour(46, 204, 113, 1.0);  // Nephritis
+    cmap.addColour(241, 196, 15, 1.0);  // Sun Flower
+    cmap.addColour(230, 126, 34, 1.0);  // Carrot
+    cmap.addColour(235, 59, 90,1.0);    // Crimson
 
 
 	ColourManager::setCurrentColourMap(cmap);
