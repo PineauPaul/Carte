@@ -1,5 +1,5 @@
 # Projet Modèle Numérique de Terrain 
-
+Authors : Julien Piranda et Paul Pineau
 Robotique/UE 3.1  -  Projet C++ -  Décembre 2019
 
 Supports de cours disponibles sur
