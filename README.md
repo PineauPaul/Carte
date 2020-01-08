@@ -25,3 +25,7 @@ Le  rendu  est  généré  par  votre  exécutable  avec  l’ ́ecriture  d’u
 
 executer le script build.sh
 bash ./build.sh
+
+# Exemple
+
+Exemples de cartes générées dans le dossier Datas
