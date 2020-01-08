@@ -16,11 +16,4 @@ add_library(Math src/Math.cpp)
 add_executable(create_raster src/main.cpp)
 target_link_libraries(create_raster carte Math)
 
-enable_testing()
 
-
-
-add_executable(test_exe test/test.cpp)
-target_link_libraries(test_exe Math)
-
-add_test(test_exe test_exe)
