@@ -20,4 +20,8 @@ Le Maillage:
 Format d’image:
 
 Le  rendu  est  généré  par  votre  exécutable  avec  l’ ́ecriture  d’un  fichier  de  données.
-	
+
+# Compilation
+
+executer le script build.sh
+bash ./build.sh

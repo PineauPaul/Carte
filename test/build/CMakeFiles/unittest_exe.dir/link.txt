@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/unittest_exe.dir/test.cpp.o CMakeFiles/unittest_exe.dir/Math.cpp.o CMakeFiles/test_main.dir/test_main.cpp.o  -o unittest_exe 
